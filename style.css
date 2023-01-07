@@ -1,0 +1,98 @@
+/* START  navigation module CSS here   */
+.navbar {
+	padding: .8rem;
+}
+ .navbar-nav li {
+	 padding-right: 20px;
+ }
+ .nav-link {
+	 font-size: 1.1em !important;
+ }
+ .navbar-brand img{
+	height:2rem;
+	margin-right:10px;
+	position:relative;
+    bottom:5px;
+
+}
+
+/* END  navigation module CSS here   */
+
+/* START CAROUSEL MODULES CSS */
+.carousel img
+{
+	height:550px;
+          
+}
+
+/* END CAROUSEL MODULES CSS*/
+
+/* START THREE PHOTO MODULES CSS*/
+.threePhotoSection img
+{
+	width:420px;
+	height:300px;
+}
+.threePhotoSection h3
+{
+margin-top:50px;
+margin-bottom:50px;
+}
+.threePhotoSection
+{
+	margin-bottom:30px;
+}
+
+/* END OF THREE PHOTO MODULES CSS*/
+
+/* START OF PARAGRAPH MODULES CSS*/
+.moreAboutUs h3 
+{
+	padding:25px;
+	padding-bottom:40px;
+}
+
+.moreAboutUs  blockquote
+{
+	padding:55px;
+	
+}
+/* END OF PARAGRAPH MODULES CSS*/
+
+/* START OF TABLE MODULE CSS*/
+/* END OF TABLE MODULE CSS*/
+
+/* START OF FORM MODULES CSS*/
+.contact{
+    background-image: url("./images/shrek2.jpg");
+   }
+
+/* END OF FORM MODULES CSS*/
+
+/* START OF BUTTON CSS*/
+.btn{
+	margin-left:auto;
+	margin-right:auto;display:block;
+	margin-bottom:50px;
+    margin-top:50px;
+}
+
+/* END OF BUTTON CSS*/
+
+ /* START OF FOOTER CSS*/
+ footer{
+	background-image: url("./images/shrekfooter.jpg");
+	color: white;
+	padding: 2rem 0 2rem;
+	margin-top: 1rem;
+}
+footer img{
+	height: 3rem;
+	margin: 1.5rem 0;
+}
+footer a{
+	color:white;
+}
+
+
+ /* END OF FOOTER CSS*/
