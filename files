@@ -63,4 +63,147 @@ lst = [5, 2, 8, 1, 9, 3]
 smallest = find_smallest(lst)
 print(smallest) # Output: 1
 
-5]
+5]def copy_odd_lines(from_file, to_file):
+ with open(from_file, 'r') as f1, open(to_file, 'w') as f2:
+ lines = f1.readlines()
+ odd_lines = [line for i, line in enumerate(lines) if i % 2 != 0]
+ f2.writelines(odd_lines)
+ print("copy successful")
+# example usage
+from_file = 'input.txt'
+to_file = 'output.txt'
+copy_odd_lines(from_file, to_file)
+
+6] def count_lines_words_characters(file_path):
+ line_count = 0
+ word_count = 0
+ character_count = 0
+ with open(file_path, 'r') as file:
+ for line in file:
+ line_count += 1
+ words = line.split()
+ word_count += len(words)
+ character_count += len(line)
+ print("Number of lines:", line_count)
+ print("Number of words:", word_count)
+ print("Number of characters:", character_count)
+# Example usage:
+file_path = "abc.txt" # Replace with the actual file path
+count_lines_words_characters(file_path)
+
+7]class Person:
+ def __init__(self, USN, Name, dob, gender):
+ self.USN = USN
+ self.Name = Name
+ self.dob = dob
+ self.gender = gender
+class Student(Person):
+ def __init__(self, USN, Name, dob, gender, Marks, Attendance):
+ super().__init__(USN, Name, dob, gender)
+ self.Marks = Marks
+ self.Attendance = Attendance
+class MarksAttendance:
+ def __init__(self, Marks, Attendance):
+ self.Marks = Marks
+ self.Attendance = Attendance
+# Create an instance of the Student class
+S = Student("ILAB16CS005", "XYZ", "18-1-90", "M", 85, 98)
+# Display the details of the student
+print("USN:", S.USN)
+print("Name:", S.Name)
+print("Date of Birth:", S.dob)
+print("Gender:", S.gender)
+print("Marks:", S.Marks)
+print("Attendance:", S.Attendance)
+
+8]class Rectangle:
+ def __init__(self, width, height, corner_x, corner_y):
+ self.width = width
+ self.height = height
+ self.corner_x = corner_x
+ self.corner_y = corner_y
+ def get_center(self):
+ center_x = self.corner_x + self.width / 2
+ center_y = self.corner_y + self.height / 2
+ return center_x, center_y
+ def get_area(self):
+ return self.width * self.height
+ def get_perimeter(self):
+ return 2 * (self.width + self.height)
+# Example usage:
+rect = Rectangle(5, 10, 0, 0)
+center = rect.get_center()
+area = rect.get_area()
+perimeter = rect.get_perimeter()
+print("Center:", center)
+print("Area:", area)
+print("Perimeter:", perimeter)
+
+9]import re,urllib
+import urllib.request
+u=urllib.request.urlopen("https://www.redbus.in/info/redcare")
+text=u.read()
+numbers=re.findall("[0-9-]{7}[0-9-]+",str(text),re.I)
+for n in numbers:
+ print(n)
+
+10] import re
+f1=open("input.txt","r")
+f2=open("output.txt","w")
+for line in f1:
+ list=re.findall("[7-9]\d{9}",line)
+ for n in list:
+ f2.write(n+"\n")
+print("Extracted all Mobile Numbers into output.txt")
+f1.close()
+f2.close()
+
+11] import re
+n=input("Enter number:")
+m=re.fullmatch("[7-9]\d{9}",n)
+if m!= None:
+ print("Valid Mobile Number")
+else:
+ print("Invalid Mobile Number")
+
+12] import re
+s=input("Enter Mail id:")
+m=re.fullmatch("\w[a-zA-Z0-9_.]*@gmail[.]com",s)
+if m!=None:
+ print("Valid Mail Id");
+else:
+ print("Invalid Mail id")
+
+13]
+from datetime import datetime, timedelta
+
+class BirthdayCalculator:
+    def __init__(self, birthday):
+        self.birthday = datetime.strptime(birthday, "%Y-%m-%d").date()
+
+    def calculate_age(self):
+        today = datetime.today().date()
+        age = today.year - self.birthday.year
+        if (today.month, today.day) < (self.birthday.month, self.birthday.day):
+            age -= 1
+        return age
+
+    def calculate_time_until_next_birthday(self):
+        today = datetime.today().date()
+        next_birthday = datetime(today.year, self.birthday.month, self.birthday.day).date()
+        if next_birthday < today:
+            next_birthday = datetime(today.year + 1, self.birthday.month, self.birthday.day).date()
+        time_until_next_birthday = next_birthday - today
+        days = time_until_next_birthday.days
+        hours, remainder = divmod(time_until_next_birthday.seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        return days, hours, minutes, seconds
+
+# Example usage:
+birthday = input("Enter your birthday (YYYY-MM-DD): ")
+calculator = BirthdayCalculator(birthday)
+age = calculator.calculate_age()
+days, hours, minutes, seconds = calculator.calculate_time_until_next_birthday()
+print("Age:", age)
+print("Time until next birthday: {} days, {} hours, {} minutes, {} seconds".format(days, hours, minutes, seconds))
+
