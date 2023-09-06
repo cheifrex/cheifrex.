@@ -1,0 +1,66 @@
+1]   # set the initial value of alphabet to 'A'
+alphabet = 'A'
+# loop through the rows of the pattern
+for i in range(1, 6):
+ # loop through the columns of each row
+ for j in range(i * 2 - 1):
+ # print the current alphabet character
+ print(alphabet, end=' ')
+ # increment the alphabet character
+ alphabet = chr(ord(alphabet) + 1)
+ # if we've reached the end of the alphabet, wrap around to 'A'
+ if alphabet > 'Z':
+ alphabet = 'A'
+ # print a newline to start the next row
+ print()
+
+2] def count_strings(lst):
+ count = 0
+ for s in lst:
+ if len(s) >= 2 and s[0] == s[-1]:
+ count += 1
+ return count
+# example usage
+strings = ['racecar', 'apple', 'civic', 'python', 'madam']
+count = count_strings(strings)
+print(f"There are {count} strings that meet the criteria.")
+
+3] def remove_duplicates_and_sort(sentence):
+ # split the sentence into a list of words
+ words = sentence.split()
+ # create a set of unique words
+ unique_words = set(words)
+ # convert the set back to a list and sort it
+ sorted_words = sorted(list(unique_words))
+ # join the sorted words back into a sentence and return it
+ return ' '.join(sorted_words)
+# example usage
+sentence = input("Enter a sentence: ")
+result = remove_duplicates_and_sort(sentence)
+print(result)
+
+4] (1)def find_length(s):
+ # base case: an empty string has length 0
+ if s == "":
+ return 0
+ # recursive case: remove the first character of the string and
+ # add 1 to the length of the rest of the string
+ else:
+ return 1 + find_length(s[1:])
+# example usage
+s = "hello world"
+length = find_length(s)
+print(f"The length of the string '{s}' is {length}.")
+
+(2)def find_smallest(lst):
+ if len(lst) == 1:
+ return lst[0]
+ else:
+ smallest = find_smallest(lst[1:])
+ return smallest if smallest < lst[0] else lst[0]
+# example usage
+lst = [5, 2, 8, 1, 9, 3]
+smallest = find_smallest(lst)
+print(smallest) # Output: 1
+
+5]
